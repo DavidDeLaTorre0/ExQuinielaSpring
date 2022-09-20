@@ -1,0 +1,21 @@
+<div class="container">
+	
+	<h1>Lista de equipos</h1>
+	
+	<form action="/equipo/c">
+		<input type="submit" value="Nuevo equipo" />
+	</form>
+	
+
+	<table class="table table-striped">
+		<tr>
+			<th>Nombre</th>
+		</tr>
+		
+		<th:block th:each=" equipo: ${equipos}">
+		<tr>
+			<td th:text="${equipo.nombre}"/>
+		</tr>
+		</th:block>
+	</table>
+</div>

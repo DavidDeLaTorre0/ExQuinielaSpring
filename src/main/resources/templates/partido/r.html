@@ -1,0 +1,33 @@
+<div class="container">
+	
+	<h1>Lista de partidos</h1>
+	
+	<form action="/partido/c">
+		<input type="submit" value="Nuevo partido" />
+	</form>
+
+	<form action="/partido/r">
+		<label for="idFecha">Filtrar por fecha</label>
+		<input id="idFecha" type="date" name="fecha" onchange="submit()" th:value="${fecha}"/>
+	</form>
+	
+	<table class="table table-striped">
+		<tr>
+			<th>Jornada </th>
+			<th>Fecha </th>
+			<th>Equipo local</th>
+			<th>Equipo visitante</th>
+			<th>Resultado</th>
+		</tr>
+		
+		<th:block th:each=" partido: ${partidos}">
+		<tr>
+			<td th:text="${partido.nJornada}"/>
+			<td th:text="${partido.fecha}"/>
+			<td th:text="${partido.local.nombre}"/>
+			<td th:text="${partido.visitante.nombre}"/>
+			<td th:text="|${partido.gl}-${partido.gv}|"/>
+		</tr>
+		</th:block>
+	</table>
+</div>

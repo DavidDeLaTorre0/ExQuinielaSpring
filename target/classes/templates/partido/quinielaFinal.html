@@ -1,0 +1,23 @@
+<div class="container">
+	<h1>Quiniela de la jornada num.<th:block th:text="${nJornada}" /></h1>
+
+	<table class="table table-striped">
+		<tr>
+			<th>Orden</th>
+			<th>Fecha</th>
+			<th>Eq.local</th>
+			<th>Eq.visitante</th>
+			<th>Resultado</th>
+		</tr>
+
+		<th:block th:each=" partido : ${partidos}">
+			<tr>
+				<td> -- </td>
+				<td th:text="${partido.fecha}"/>
+				<td th:text="${partido.local.nombre}"/>
+				<td th:text="${partido.visitante.nombre}"/>
+				<td th:text="|${partido.getResultado()} (${partido.gl}-${partido.gv})|"/>
+			</tr>
+		</th:block>	
+	</table>
+</div>

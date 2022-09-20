@@ -1,0 +1,12 @@
+<div class="container">
+	<h1>Escoge la jornada</h1>
+	
+	<form action="/partido/quinielaFinal">
+
+	<th:block th:each="nJornada : ${jornadas}">
+			<input type="submit" name="nJornada" th:value="${nJornada}"/>
+	</th:block>
+
+	</form>
+
+</div>
